@@ -1,0 +1,40 @@
+name: Feature request
+description: 機能提案
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        提案の背景と、利用者にとっての価値を記載してください。
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 解決したい課題
+      description: どんな課題・不便を解消したいですか？
+      placeholder: 例) スロット割り当てが多いと管理しづらい
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 提案内容
+      description: 具体的なUI/挙動を記載してください。
+      placeholder: 例) スロットをドラッグ&ドロップで並び替えたい
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 代替案
+      description: 他に検討した方法があれば記載してください。
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: 補足
+      description: 参考リンク、モック、関連Issueなど

@@ -1,0 +1,65 @@
+name: Bug report
+description: 不具合報告
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        問題の再現に必要な情報をできるだけ具体的に記載してください。
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: 概要
+      description: 何が起きたかを簡潔に記載してください。
+      placeholder: 例) Popupから実行すると「Execution failed」が表示される
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 再現手順
+      description: 再現できる手順を番号付きで記載してください。
+      placeholder: |
+        1. Arcで任意ページを開く
+        2. 拡張Popupからxxxを実行
+        3. エラー表示
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待される動作
+      placeholder: 例) ブックマークレットが正常に実行される
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 実際の動作
+      placeholder: 例) 実行失敗メッセージが表示される
+    validations:
+      required: true
+
+  - type: input
+    id: arc_version
+    attributes:
+      label: Arcバージョン
+      placeholder: 例) Arc 1.xx.x
+
+  - type: input
+    id: os
+    attributes:
+      label: OS
+      placeholder: 例) macOS 15.x
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 追加情報
+      description: スクリーンショット、コンソールログ、関連情報など
