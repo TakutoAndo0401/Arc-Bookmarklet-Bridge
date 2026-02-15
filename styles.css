@@ -112,6 +112,11 @@ button {
     background: color-mix(in srgb, canvastext 10%, canvas);
 }
 
+#openOptionsButton {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
 .bookmarklet-list {
     list-style: none;
     margin: 0;
