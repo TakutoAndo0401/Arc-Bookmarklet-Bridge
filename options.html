@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmarklet Manager</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <main class="options-root">
+        <header class="page-header">
+            <h1>Bookmarklet Manager</h1>
+            <p>Arcで使うブックマークレットを管理します。</p>
+        </header>
+
+        <section class="panel">
+            <h2>新規 / 編集</h2>
+            <form id="bookmarkletForm" class="form-grid">
+                <input id="bookmarkletId" type="hidden" />
+
+                <label>
+                    名前
+                    <input id="nameInput" type="text" maxlength="120" required />
+                </label>
+
+                <label>
+                    タグ（カンマ区切り）
+                    <input id="tagsInput" type="text" placeholder="dev, utility" />
+                </label>
+
+                <label class="checkbox-row">
+                    <input id="favoriteInput" type="checkbox" />
+                    お気に入り
+                </label>
+
+                <label>
+                    コード（javascript: から始まるURLも可）
+                    <textarea id="codeInput" rows="7" required></textarea>
+                </label>
+
+                <div class="button-row">
+                    <button type="submit" class="primary-button">保存</button>
+                    <button type="button" id="clearButton" class="secondary-button">入力クリア</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>ショートカット設定</h2>
+            <div class="settings-grid">
+                <label>
+                    モード
+                    <select id="shortcutModeSelect">
+                        <option value="launcher">ランチャーのみ</option>
+                        <option value="slots">固定スロットのみ</option>
+                        <option value="both">ランチャー + 固定スロット</option>
+                    </select>
+                </label>
+
+                <label class="checkbox-row">
+                    <input id="confirmBeforeRunInput" type="checkbox" />
+                    実行前に確認ダイアログを表示
+                </label>
+
+                <label>
+                    Slot 1
+                    <select id="slot1Select"></select>
+                </label>
+
+                <label>
+                    Slot 2
+                    <select id="slot2Select"></select>
+                </label>
+
+                <label>
+                    Slot 3
+                    <select id="slot3Select"></select>
+                </label>
+
+                <label>
+                    Slot 4
+                    <select id="slot4Select"></select>
+                </label>
+            </div>
+            <p class="hint">キー割り当ては Arc の拡張ショートカット設定（arc://extensions/shortcuts）で変更できます。</p>
+        </section>
+
+        <section class="panel">
+            <h2>一覧</h2>
+            <input id="filterInput" class="search-input" placeholder="検索 (name / tags)" />
+            <div id="listContainer" class="table-container"></div>
+        </section>
+
+        <section class="panel">
+            <h2>インポート / エクスポート</h2>
+            <div class="button-row">
+                <button id="exportButton" type="button" class="secondary-button">JSONエクスポート</button>
+                <select id="importModeSelect">
+                    <option value="replace">置換</option>
+                    <option value="merge">マージ</option>
+                </select>
+                <input id="importFileInput" type="file" accept="application/json" />
+            </div>
+        </section>
+
+        <p id="status" class="status-line"></p>
+    </main>
+
+    <script type="module" src="options.js"></script>
+</body>
+
+</html>

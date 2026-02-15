@@ -1,0 +1,49 @@
+{
+    "manifest_version": 3,
+    "name": "Arc Bookmarklet Bridge",
+    "description": "Manage and run bookmarklets in Arc with CRUD and keyboard shortcuts.",
+    "version": "0.1.0",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "storage",
+        "commands",
+        "tabs"
+    ],
+    "background": {
+        "service_worker": "service-worker.js",
+        "type": "module"
+    },
+    "action": {
+        "default_title": "Bookmarklet Launcher",
+        "default_popup": "popup.html"
+    },
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": true
+    },
+    "commands": {
+        "open-launcher": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+L",
+                "mac": "Command+Shift+L"
+            },
+            "description": "Open bookmarklet launcher"
+        },
+        "run-slot-1": {
+            "description": "Run bookmarklet in slot 1"
+        },
+        "run-slot-2": {
+            "description": "Run bookmarklet in slot 2"
+        },
+        "run-slot-3": {
+            "description": "Run bookmarklet in slot 3"
+        },
+        "run-slot-4": {
+            "description": "Run bookmarklet in slot 4"
+        },
+        "open-options": {
+            "description": "Open bookmarklet manager"
+        }
+    }
+}
